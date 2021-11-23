@@ -1,10 +1,12 @@
 // 변수는 camelCase
 let countEl = document.getElementById("count-el");
+let saveEl = document.getElementById("save-el");
 let count = 0;
+let errorPragraph = document.getElementById("error");
 
 function increment() {
   count += 1;
-  countEl.innerText = count;
+  countEl.textContent = count;
   console.log(count);
 }
 
@@ -15,7 +17,11 @@ function increment() {
 // --> how use javscript to modify a website
 
 function save() {
-  console.log(count);
-}
+  let countStr = count + " - ";
+  console.log(countStr);
+  saveEl.textContent += countStr;
 
-save();
+  countEl.textContent = 0;
+  count = 0;
+  errorPragraph.textContent = "Error, please try again";
+}
