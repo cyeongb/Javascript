@@ -1,0 +1,35 @@
+
+body{
+text-align: center;
+background:#400e91;
+color:#ffffff;
+font-family: 'Times New Roman', Times, serif;
+font-size:26px;
+font-weight: bold;
+}
+
+h1{
+    color:#e3c911;
+}
+
+#message-el{
+
+    font-style: italic;
+    color:#a3ffbb;
+}
+
+#start-btn{
+    width: 100px;
+    height: 35px;
+    background: #ffffff;
+    color: #400e91;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+}
+#start-btn:hover{
+    background :#e3c911;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
