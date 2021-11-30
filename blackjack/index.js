@@ -3,9 +3,14 @@
 let firstCard = 5;
 let secondCard = 7;
 
-let cards = [firstCard, secondCard, thirdCard, fourthCard, fifthCard]; //ordered 된 리스트
+let cards = [firstCard, secondCard];
 
-let sum = firstCard + secondCard;
+let sum = 0;
+for (i = 0; i < cards.length; i++) {
+  sum += cards[i];
+}
+
+// let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
@@ -20,7 +25,10 @@ function startGame() {
 }
 
 function renderGame() {
-  cardsEl.textContent = "Cards: " + cards[0] + ", " + cards[1];
+  cardsEl.textContent = "Cards: ";
+  for (let j = 0; j < cards.length; j++) {
+    cardsEl.textContent += cards[j] + " , ";
+  }
   sumEl.textContent = "Sum: " + sum;
   if (sum < 21) {
     message = "Do you want to draw a new card?";
@@ -31,14 +39,13 @@ function renderGame() {
     message = "game over";
     isAlive = false;
   }
-  sumEl.textContent = "Sum:" + sum;
+  // sumEl.textContent = "Sum:" + sum;
   messageEl.textContent = message;
 }
 
 function newCard() {
-  //1. create a card variable as a hard coded number
   let newCard = 3;
+  cards.push(newCard);
   sum += newCard;
   renderGame();
-  //2.
 }
