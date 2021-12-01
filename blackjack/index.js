@@ -12,6 +12,9 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.querySelector("#sum-el"); //querySelector가 더 동적입니다.
 let cardsEl = document.getElementById("cards-el");
 
+let player = { name: "gambi", chips: 120 };
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + ": $ " + player.chips;
 // create a startGame() that calls renderGame()
 function startGame() {
   isAlive = true;
@@ -27,7 +30,7 @@ function startGame() {
 function renderGame() {
   cardsEl.textContent = "Cards: ";
   for (let j = 0; j < cards.length; j++) {
-    cardsEl.textContent += cards[j] + " , ";
+    cardsEl.textContent += cards[j] + "  ";
   }
   sumEl.textContent = "Sum: " + sum;
   if (sum < 21) {
