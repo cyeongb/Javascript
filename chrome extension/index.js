@@ -1,17 +1,9 @@
-const myLeads = [
-  "https://www.naver.com",
-  "https://www.google.com",
-  "https://www.youtube.com",
-];
+const myLeads = [];
 const inputEl = document.getElementById("input-el");
 let inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function () {
-  //inputBtn을 click 했을때 동작은, 다음 코드를 실행한다
-  console.log("이벤트 리스너");
-
-  console.log(inputEl.value);
   if (
     inputEl.value !== "" &&
     inputEl.value !== null &&
@@ -19,13 +11,40 @@ inputBtn.addEventListener("click", function () {
   ) {
     myLeads.push(inputEl.value);
   }
-  console.log("myLeads:", myLeads);
-  console.log("ulEl:", ulEl);
-});
-for (let i = 0; i < myLeads.length; i++) {
-  ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
-  // innerHTML 속성으로 <li></li>를 html처럼 구현할 수 있다.
-}
-//log out the items in the myLeads array using a for loop
 
-// grab tje unordered list and store it in a const variable called ulEl
+  renderLeads();
+  // clear the input field
+  clearField();
+});
+
+function clearField() {
+  document.getElementById("input-el").value = "";
+}
+
+function renderLeads() {
+  let listItems = "";
+  for (let i = 0; i < myLeads.length; i++) {
+    // listItems +=
+    //   "<li><a href='" +
+    //   myLeads[i] +
+    //   "' target='_blank'>" +
+    //   myLeads[i] +
+    //   "</a></li>";
+
+    listItems += `<li>
+        <a href='${myLeads[i]}' target='_blank'>${myLeads[i]}</a>
+      </li>`;
+
+    // a link 새탭에서 열기
+
+    // innerHTML 속성으로 <li></li>를 html처럼 구현할 수 있다.
+    // 1. create elements
+    // const li = document.createElement("li");
+    // 2. set text content
+    // li.textContent = myLeads[i];
+    // 3. append to ul
+    // ulEl.append(li);
+  }
+  console.log("listItems", listItems);
+  ulEl.innerHTML = listItems;
+}
