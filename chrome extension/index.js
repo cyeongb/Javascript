@@ -3,7 +3,24 @@ const inputEl = document.getElementById("input-el");
 let inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
-inputBtn.addEventListener("click", function () {
+inputBtn.addEventListener("keydown", function (e) {
+  console.log("keydown?? e", e.key);
+  if (e.key === "Enter") {
+    if (
+      inputEl.value !== "" &&
+      inputEl.value !== null &&
+      inputEl.value !== undefined
+    ) {
+      myLeads.push(inputEl.value);
+    }
+
+    renderLeads();
+    // clear the input field
+    clearField();
+  }
+});
+
+inputBtn.addEventListener("click", function (e) {
   if (
     inputEl.value !== "" &&
     inputEl.value !== null &&
@@ -16,9 +33,10 @@ inputBtn.addEventListener("click", function () {
   // clear the input field
   clearField();
 });
+// window.onkeydown = (e) => console.log(e);
 
 function clearField() {
-  document.getElementById("input-el").value = "";
+  document.getElementById("input-el").value = "https://";
 }
 
 function renderLeads() {

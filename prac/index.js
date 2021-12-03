@@ -7,3 +7,5 @@ function buy() {
     cont.innerHTML += "<p>Thank you </p>";
   });
 }
+
+window.onkeydown = (e) => console.log(e);
