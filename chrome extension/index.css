@@ -1,9 +1,16 @@
 body{
     margin:0;
     padding:10px 0 0 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     min-width: 400px;
+    background:#f1f1f1;
+}
+
+#head-tit{
+    padding:10px 0 10px 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#2b2e2d;
 }
 
 input{
@@ -18,24 +25,41 @@ input{
     border-radius: 10px;
 }
 
-button{
+#input-btn , #delete-btn , #tab-btn{
     background:#3d3d44;
     padding:10px;
     margin:5px;
-    color:#0be9ab;
-    width:100px;
     height:auto;
     border:none;
     font-weight: bold;
     border-radius: 15px;
 }
 
-button:hover{
+#input-btn, #tab-btn{
+    color:#0be9ab;
+    width:100px;
+}
+
+#delete-btn{
+    width:110px;
+    color:rgb(218, 39, 39);
+}
+
+#input-btn:hover , #tab-btn:hover{
     cursor:pointer;
     background:#ffffff;
     /* border:1px solid  #0be9ab; */
     box-shadow: inset 0 0 0 1px #0be9ab;
 }
+
+#delete-btn:hover{
+    cursor:pointer;
+    background:#ffffff;
+    box-shadow: inset 0 0 0 1px rgb(218, 39, 39);
+}
+
+
+
 
 ul{
     padding-left: 10px;
